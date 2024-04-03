@@ -8,10 +8,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class SMTP
- * @ORM\Entity()
- * @ORM\Table(name="nti_smtp_configuration")
- * @ORM\HasLifecycleCallbacks()
+ * 
  */
+
+ #[ORM\Table(name: 'nti_smtp_configuration')]
+ #[ORM\HasLifecycleCallbacks()]
 class Smtp {
 
     /**

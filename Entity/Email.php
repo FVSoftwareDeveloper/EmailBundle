@@ -9,10 +9,11 @@ use NTIEmailBundle\Entity\EmailAttachment;
 /**
  * Email
  *
- * @ORM\Table(name="nti_email")
- * @ORM\Entity(repositoryClass="NTI\EmailBundle\Repository\EmailRepository")
- * @ORM\HasLifecycleCallbacks()
  */
+
+ #[ORM\Table(name: 'nti_email')]
+ #[ORM\Entity(repositoryClass: 'NTI\EmailBundle\Repository\EmailRepository')]
+ #[ORM\HasLifecycleCallbacks()]
 class Email
 {
     const STATUS_QUEUE = "Queue";
