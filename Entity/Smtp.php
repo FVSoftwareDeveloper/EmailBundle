@@ -17,69 +17,65 @@ class Smtp {
 
     /**
      * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *     
      */
+    #[ORM\Column(name: 'id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="host", type="string", length=255)
-     *
-     * @Assert\NotBlank(message="The Host field is required.")
+     *     
      */
+    #[ORM\Column(name: 'host', type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "The Host field is required.")]
     private $host;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="port", type="integer")
-     *
-     * @Assert\NotBlank(message="The Port field is required.")
+     *     
      */
+    #[ORM\Column(name: 'port', type: 'integer')]
+    #[Assert\NotBlank(message: "The Port field is required.")]
     private $port;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="encryption", type="string", length=255, nullable=true)
+     *     
      *
      */
+    #[ORM\Column(name: 'encryption', type: 'string', length: 255, nullable: true)]
     private $encryption;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255)
-     *
-     * @Assert\NotBlank(message="The Username field is required.")
+     *     
      */
+    #[ORM\Column(name: 'user', type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "The Username field is required.")]
     private $user;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     *
-     * @Assert\NotBlank(message="The Password field is required.")
+     *     
      */
+    #[ORM\Column(name: 'password', type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "The Password field is required.")]
     private $password;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="unique_id", type="string", length=255, unique=true)
+     *     
      */
+    #[ORM\Column(name: 'unique_id', type: 'string', length: 255, nullable: true)]
     private $uniqueId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="spool_dir", type="string", length=255)
+     *     
      */
+    #[ORM\Column(name: 'spool_dir', type: 'string', length: 255)]
     private $spoolDir;
 
     /**

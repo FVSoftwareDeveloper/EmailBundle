@@ -24,102 +24,102 @@ class Email
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *     
      */
+    #[ORM\Column(name: 'id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="filename", type="string", length=255)
      */
+    #[ORM\Column(name: 'filename', type: 'string', length: 255)]
     private $filename;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="path", type="text")
      */
+    #[ORM\Column(name: 'path', type: 'text')]
     private $path;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message_from", type="string", length=255)
      */
+    #[ORM\Column(name: 'message_from', type: 'string', length: 255)]
     private $messageFrom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message_to", type="string", length=255, nullable=true)
      */
+    #[ORM\Column(name: 'message_to', type: 'string', length: 255, nullable: true)]
     private $messageTo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message_cc", type="string", length=255, nullable=true)
      */
+    #[ORM\Column(name: 'message_cc', type: 'string', length: 255, nullable: true)]
     private $messageCc;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message_bcc", type="string", length=255, nullable=true)
      */
+    #[ORM\Column(name: 'message_bcc', type: 'string', length: 255, nullable: true)]
     private $messageBcc;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="message_subject", type="string", length=255)
+     *     
      */
+    #[ORM\Column(name: 'message_subject', type: 'string', length: 255)]
     private $messageSubject;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="message_body", type="text")
      */
+    #[ORM\Column(name: 'message_body', type: 'string')]
     private $messageBody;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="retry_count", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'retry_count', type: 'integer', nullable: true)]
     private $retryCount;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="string", length=255)
      */
+    #[ORM\Column(name: 'status', type: 'string', length: 255)]
     private $status;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_on", type="datetime")
      */
+    #[ORM\Column(name: "created_on", type: "datetime")]
     private $createdOn;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_check", type="datetime", nullable=true)
      */
+    #[ORM\Column(name: 'last_check', type: 'datetime', nullable: true)]
     private $lastCheck;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="attachments", type="array", nullable=true);
      */
+    #[ORM\Column(name: 'attachments', type: 'array', nullable: true)]
     private $attachments;
 
 
@@ -237,10 +237,10 @@ class Email
 
     /**
      * Set createdOn
-     * @ORM\PrePersist
      *
      * @return Email
      */
+    #[ORM\PrePersist]
     public function setCreatedOn()
     {
         $this->createdOn = new \DateTime();
