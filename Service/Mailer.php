@@ -77,7 +77,7 @@ class Mailer {
      * @return bool
      */
     public function sendEmail($from, $to, $cc, $bcc, $subject, $html, $attachments = array(), $smtp = null) {
-        return $this->processEmail($from, $to, $cc, $bcc, $subject, $html, $attachments, $smtp);
+        return $this->processEmail($from, $to, $subject, $cc, $bcc, $html, $attachments, $smtp);
     }
 
     /**
@@ -89,9 +89,9 @@ class Mailer {
         $this->processEmail(
             $email->getMessageFrom(),
             $email->getMessageTo(),
+            $email->getMessageSubject(),
             $email->getMessageCc(),
             $email->getMessageBcc(),
-            $email->getMessageSubject(),
             $email->getMessageBody(),
             $email->getAttachments()
         );
@@ -298,7 +298,7 @@ class Mailer {
      * @param array $attachments
      * @return bool
      */
-    private function processEmail($from, $to, $cc = array(), $bcc = array(), $subject, $html = "", $attachments = array(), $smtp = null) {
+    private function processEmail($from, $to, $subject, $cc = array(), $bcc = array(), $html = "", $attachments = array(), $smtp = null) {
 
         if($this->devMode) {
             $to = $this->devTo;
