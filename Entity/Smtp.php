@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 
  #[ORM\Table(name: 'nti_smtp_configuration')]
+ #[ORM\Entity(repositoryClass: 'NTI\EmailBundle\Repository\SmtpRepository')]
  #[ORM\HasLifecycleCallbacks()]
 class Smtp {
 
